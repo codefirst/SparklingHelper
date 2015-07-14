@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "890A4B3E171F031300AFE577"
+               BlueprintIdentifier = "13E5374A1B55C09C00EB27B5"
                BuildableName = "SparklingHelper.xcplugin"
                BlueprintName = "SparklingHelper"
                ReferencedContainer = "container:SparklingHelper.xcodeproj">
@@ -43,6 +43,8 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -53,15 +55,17 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "NO"
       debugXPCServices = "NO"
+      debugServiceExtension = "internal"
       allowLocationSimulation = "NO"
       viewDebuggingEnabled = "No">
       <PathRunnable
-         FilePath = "/Applications/Xcode.app">
+         runnableDebuggingMode = "0"
+         FilePath = "/Applications/Xcode-beta.app">
       </PathRunnable>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "890A4B3E171F031300AFE577"
+            BlueprintIdentifier = "13E5374A1B55C09C00EB27B5"
             BuildableName = "SparklingHelper.xcplugin"
             BlueprintName = "SparklingHelper"
             ReferencedContainer = "container:SparklingHelper.xcodeproj">
