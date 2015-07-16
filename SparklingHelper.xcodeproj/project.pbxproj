@@ -7,25 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10B4B4FB09002AB0FBE6B621 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB75F9391369F7825EA83A7 /* libPods.a */; };
+		138799D91B57EBD0005CB7FB /* SparklingHTTPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138799D81B57EBD0005CB7FB /* SparklingHTTPServer.swift */; };
+		138799DC1B57EF5E005CB7FB /* DVTFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138799DB1B57EF5E005CB7FB /* DVTFoundation.framework */; };
 		13E537501B55C09C00EB27B5 /* SparklingHelper.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 13E5374F1B55C09C00EB27B5 /* SparklingHelper.xcscheme */; };
 		13E537521B55C09C00EB27B5 /* SparklingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E537511B55C09C00EB27B5 /* SparklingHelper.swift */; };
 		13E537541B55C09C00EB27B5 /* NSObject_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E537531B55C09C00EB27B5 /* NSObject_Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		138799D81B57EBD0005CB7FB /* SparklingHTTPServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparklingHTTPServer.swift; sourceTree = "<group>"; };
+		138799DA1B57EBDF005CB7FB /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
+		138799DB1B57EF5E005CB7FB /* DVTFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTFoundation.framework; path = "../../../../Applications/Xcode-beta.app/Contents/SharedFrameworks/DVTFoundation.framework"; sourceTree = "<group>"; };
+		138799DD1B57EF7D005CB7FB /* DVTFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVTFoundation.h; sourceTree = "<group>"; };
+		138799DE1B57EF7D005CB7FB /* IDEKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDEKit.h; sourceTree = "<group>"; };
 		13E5374B1B55C09C00EB27B5 /* SparklingHelper.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SparklingHelper.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		13E5374F1B55C09C00EB27B5 /* SparklingHelper.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = SparklingHelper.xcscheme; path = SparklingHelper.xcodeproj/xcshareddata/xcschemes/SparklingHelper.xcscheme; sourceTree = SOURCE_ROOT; };
 		13E537511B55C09C00EB27B5 /* SparklingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparklingHelper.swift; sourceTree = "<group>"; };
 		13E537531B55C09C00EB27B5 /* NSObject_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject_Extension.swift; sourceTree = "<group>"; };
 		13E537551B55C09C00EB27B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D9CA1682899D48F828D08F0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8AB75F9391369F7825EA83A7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F00779E409EE1B487FDF2DAB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFrameworksBuildPhase section */
+		1A2C502E27A8895A045E07B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				138799DC1B57EF5E005CB7FB /* DVTFoundation.framework in Frameworks */,
+				10B4B4FB09002AB0FBE6B621 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
+		138799DF1B57EF84005CB7FB /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				138799DD1B57EF7D005CB7FB /* DVTFoundation.h */,
+				138799DE1B57EF7D005CB7FB /* IDEKit.h */,
+				138799DA1B57EBDF005CB7FB /* BridgeHeader.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
 		13E537431B55C09C00EB27B5 = {
 			isa = PBXGroup;
 			children = (
 				13E5374D1B55C09C00EB27B5 /* SparklingHelper */,
 				13E5374C1B55C09C00EB27B5 /* Products */,
+				7B0DE7814BABD4E7F4D20E73 /* Pods */,
+				ED79ED84CC56C5F1E8E291DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -40,6 +75,8 @@
 		13E5374D1B55C09C00EB27B5 /* SparklingHelper */ = {
 			isa = PBXGroup;
 			children = (
+				138799DF1B57EF84005CB7FB /* Headers */,
+				138799D81B57EBD0005CB7FB /* SparklingHTTPServer.swift */,
 				13E537511B55C09C00EB27B5 /* SparklingHelper.swift */,
 				13E537531B55C09C00EB27B5 /* NSObject_Extension.swift */,
 				13E537551B55C09C00EB27B5 /* Info.plist */,
@@ -56,6 +93,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7B0DE7814BABD4E7F4D20E73 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F00779E409EE1B487FDF2DAB /* Pods.debug.xcconfig */,
+				7D9CA1682899D48F828D08F0 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ED79ED84CC56C5F1E8E291DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				138799DB1B57EF5E005CB7FB /* DVTFoundation.framework */,
+				8AB75F9391369F7825EA83A7 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -63,8 +118,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13E537581B55C09C00EB27B5 /* Build configuration list for PBXNativeTarget "SparklingHelper" */;
 			buildPhases = (
+				24804768DC8051B3F9D2AB12 /* Check Pods Manifest.lock */,
 				13E537481B55C09C00EB27B5 /* Sources */,
 				13E537491B55C09C00EB27B5 /* Resources */,
+				1A2C502E27A8895A045E07B3 /* Frameworks */,
+				BC1015F9584D47D46260644B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -118,12 +176,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		24804768DC8051B3F9D2AB12 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BC1015F9584D47D46260644B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		13E537481B55C09C00EB27B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				13E537521B55C09C00EB27B5 /* SparklingHelper.swift in Sources */,
+				138799D91B57EBD0005CB7FB /* SparklingHTTPServer.swift in Sources */,
 				13E537541B55C09C00EB27B5 /* NSObject_Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,6 +258,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 			};
@@ -200,40 +293,49 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 			};
 			name = Release;
 		};
 		13E537591B55C09C00EB27B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F00779E409EE1B487FDF2DAB /* Pods.debug.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = "$(HOME)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = "/Applications/Xcode-beta.app/Contents/SharedFrameworks  ";
 				INFOPLIST_FILE = SparklingHelper/Info.plist;
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				LD_RUNPATH_SEARCH_PATHS = "$(DT_TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = org.codefirst.sparkling.SparklingHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = SparklingHelper/BridgeHeader.h;
 				WRAPPER_EXTENSION = xcplugin;
 			};
 			name = Debug;
 		};
 		13E5375A1B55C09C00EB27B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D9CA1682899D48F828D08F0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = "$(HOME)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = "/Applications/Xcode-beta.app/Contents/SharedFrameworks  ";
 				INFOPLIST_FILE = SparklingHelper/Info.plist;
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				LD_RUNPATH_SEARCH_PATHS = "$(DT_TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = org.codefirst.sparkling.SparklingHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = SparklingHelper/BridgeHeader.h;
 				WRAPPER_EXTENSION = xcplugin;
 			};
 			name = Release;
@@ -257,6 +359,7 @@
 				13E5375A1B55C09C00EB27B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

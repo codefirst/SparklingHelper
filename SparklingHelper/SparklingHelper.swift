@@ -20,6 +20,7 @@ class SparklingHelper: NSObject {
         super.init()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "createMenuItems", name: NSMenuDidChangeItemNotification, object: nil)
         createMenuItems()
+        SparklingHTTPServer().run()
     }
 
     deinit {
