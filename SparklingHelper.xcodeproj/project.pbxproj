@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		10B4B4FB09002AB0FBE6B621 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB75F9391369F7825EA83A7 /* libPods.a */; };
+		133F51861B586DBD0039B34C /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133F51851B586DBD0039B34C /* DeviceManager.swift */; };
 		138799D91B57EBD0005CB7FB /* SparklingHTTPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138799D81B57EBD0005CB7FB /* SparklingHTTPServer.swift */; };
 		138799DC1B57EF5E005CB7FB /* DVTFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138799DB1B57EF5E005CB7FB /* DVTFoundation.framework */; };
 		13E537501B55C09C00EB27B5 /* SparklingHelper.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 13E5374F1B55C09C00EB27B5 /* SparklingHelper.xcscheme */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		133F51851B586DBD0039B34C /* DeviceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 		138799D81B57EBD0005CB7FB /* SparklingHTTPServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparklingHTTPServer.swift; sourceTree = "<group>"; };
 		138799DA1B57EBDF005CB7FB /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
 		138799DB1B57EF5E005CB7FB /* DVTFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTFoundation.framework; path = "../../../../Applications/Xcode-beta.app/Contents/SharedFrameworks/DVTFoundation.framework"; sourceTree = "<group>"; };
@@ -44,6 +46,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		133F51871B586DC20039B34C /* HTTPServer */ = {
+			isa = PBXGroup;
+			children = (
+				138799D81B57EBD0005CB7FB /* SparklingHTTPServer.swift */,
+			);
+			name = HTTPServer;
+			sourceTree = "<group>";
+		};
+		133F51881B586DC90039B34C /* Xcode */ = {
+			isa = PBXGroup;
+			children = (
+				133F51851B586DBD0039B34C /* DeviceManager.swift */,
+			);
+			name = Xcode;
+			sourceTree = "<group>";
+		};
 		138799DF1B57EF84005CB7FB /* Headers */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,7 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				138799DF1B57EF84005CB7FB /* Headers */,
-				138799D81B57EBD0005CB7FB /* SparklingHTTPServer.swift */,
+				133F51871B586DC20039B34C /* HTTPServer */,
+				133F51881B586DC90039B34C /* Xcode */,
 				13E537511B55C09C00EB27B5 /* SparklingHelper.swift */,
 				13E537531B55C09C00EB27B5 /* NSObject_Extension.swift */,
 				13E537551B55C09C00EB27B5 /* Info.plist */,
@@ -215,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13E537521B55C09C00EB27B5 /* SparklingHelper.swift in Sources */,
+				133F51861B586DBD0039B34C /* DeviceManager.swift in Sources */,
 				138799D91B57EBD0005CB7FB /* SparklingHTTPServer.swift in Sources */,
 				13E537541B55C09C00EB27B5 /* NSObject_Extension.swift in Sources */,
 			);
