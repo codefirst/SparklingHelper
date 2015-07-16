@@ -15,6 +15,12 @@ class SparklingHTTPServer {
     func run() {
         webServer.addDefaultHandlerForMethod("GET", requestClass: GCDWebServerRequest.self, processBlock: {request in
             switch request.path {
+            case "/devices":
+                let devices = DVTDeviceManager.defaultDeviceManager().availableDevices?.map { device in
+                    [ "name": device.name, "identifier": device.identifier, "platform": device.platform.name ]
+                }
+
+                return GCDWebServerDataResponse(JSONObject: devices)
             default:
                 let title = "SparklingHelper"
                 let html = "<h1>⚡️SparklingHelper</h1>" +
