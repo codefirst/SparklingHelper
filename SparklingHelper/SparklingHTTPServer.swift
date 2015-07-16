@@ -31,7 +31,9 @@ class SparklingHTTPServer {
             }
         })
 
-        webServer.startWithPort(8081, bonjourName: "sparklingHelper")
+        // run webs server at some free port.
+        // User can access this server via bonjour finding.
+        webServer.startWithPort(0, bonjourName: "SparklingHelper")
 
         print("Visit \(webServer.serverURL) in your web browser")
     }
