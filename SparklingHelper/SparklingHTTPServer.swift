@@ -11,25 +11,23 @@ import Foundation
 
 class SparklingHTTPServer {
     private let webServer = GCDWebServer()
-    private lazy var deviceManager = DeviceManager()
-    private lazy var accountManager = AccountManager()
-    private lazy var certificateManager = CertificateManager()
+    private let xcode = XcodeGateway()
 
     func run() {
         webServer.addDefaultHandlerForMethod("GET", requestClass: GCDWebServerRequest.self, processBlock: {request in
             switch request.path {
             case "/devices":
-                let devices = self.deviceManager.allDevices().map {
+                let devices = self.xcode.deviceManager.allDevices().map {
                     [ "name": $0.name, "identifier": $0.identifier, "platform": $0.platform.name ]
                 }
                 return GCDWebServerDataResponse(JSONObject: devices)
             case "/accounts":
-                let accounts = self.accountManager.accounts().map {
+                let accounts = self.xcode.accountManager.accounts().map {
                     [ "username" : $0.username ]
                 }
                 return GCDWebServerDataResponse(JSONObject: accounts)
             case "/certificates":
-                let certificates = self.certificateManager.certificates().map {
+                let certificates = self.xcode.certificateManager.certificates().map {
                     [
                         "commonName" : $0.commonName,
                         "portalTeamID" : $0.portalTeamID,
