@@ -13,6 +13,8 @@
 		138799D91B57EBD0005CB7FB /* SparklingHTTPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138799D81B57EBD0005CB7FB /* SparklingHTTPServer.swift */; };
 		138799DC1B57EF5E005CB7FB /* DVTFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138799DB1B57EF5E005CB7FB /* DVTFoundation.framework */; };
 		138918FF1B59AEE3001A721E /* CertificateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138918FE1B59AEE3001A721E /* CertificateManager.swift */; };
+		138919011B59B589001A721E /* RequestProvisioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138919001B59B589001A721E /* RequestProvisioning.swift */; };
+		138919031B59B7E2001A721E /* IDEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138919021B59B7E2001A721E /* IDEKit.framework */; };
 		138919081B59C2AA001A721E /* XcodeGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138919071B59C2AA001A721E /* XcodeGateway.swift */; };
 		13E537501B55C09C00EB27B5 /* SparklingHelper.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 13E5374F1B55C09C00EB27B5 /* SparklingHelper.xcscheme */; };
 		13E537521B55C09C00EB27B5 /* SparklingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E537511B55C09C00EB27B5 /* SparklingHelper.swift */; };
@@ -28,6 +30,8 @@
 		138799DD1B57EF7D005CB7FB /* DVTFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVTFoundation.h; sourceTree = "<group>"; };
 		138799DE1B57EF7D005CB7FB /* IDEKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDEKit.h; sourceTree = "<group>"; };
 		138918FE1B59AEE3001A721E /* CertificateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificateManager.swift; sourceTree = "<group>"; };
+		138919001B59B589001A721E /* RequestProvisioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProvisioning.swift; sourceTree = "<group>"; };
+		138919021B59B7E2001A721E /* IDEKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IDEKit.framework; path = "../../../../Applications/Xcode-beta.app/Contents/Frameworks/IDEKit.framework"; sourceTree = "<group>"; };
 		138919071B59C2AA001A721E /* XcodeGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XcodeGateway.swift; sourceTree = "<group>"; };
 		13E5374B1B55C09C00EB27B5 /* SparklingHelper.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SparklingHelper.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		13E5374F1B55C09C00EB27B5 /* SparklingHelper.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = SparklingHelper.xcscheme; path = SparklingHelper.xcodeproj/xcshareddata/xcschemes/SparklingHelper.xcscheme; sourceTree = SOURCE_ROOT; };
@@ -44,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				138919031B59B7E2001A721E /* IDEKit.framework in Frameworks */,
 				138799DC1B57EF5E005CB7FB /* DVTFoundation.framework in Frameworks */,
 				10B4B4FB09002AB0FBE6B621 /* libPods.a in Frameworks */,
 			);
@@ -67,6 +72,7 @@
 				137C2EAD1B58783C00D9116A /* DeviceManager.swift */,
 				137C2EAB1B58781100D9116A /* AccountManager.swift */,
 				138918FE1B59AEE3001A721E /* CertificateManager.swift */,
+				138919001B59B589001A721E /* RequestProvisioning.swift */,
 			);
 			name = Xcode;
 			sourceTree = "<group>";
@@ -133,6 +139,7 @@
 		ED79ED84CC56C5F1E8E291DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				138919021B59B7E2001A721E /* IDEKit.framework */,
 				138799DB1B57EF5E005CB7FB /* DVTFoundation.framework */,
 				8AB75F9391369F7825EA83A7 /* libPods.a */,
 			);
@@ -246,6 +253,7 @@
 				138918FF1B59AEE3001A721E /* CertificateManager.swift in Sources */,
 				138919081B59C2AA001A721E /* XcodeGateway.swift in Sources */,
 				138799D91B57EBD0005CB7FB /* SparklingHTTPServer.swift in Sources */,
+				138919011B59B589001A721E /* RequestProvisioning.swift in Sources */,
 				13E537541B55C09C00EB27B5 /* NSObject_Extension.swift in Sources */,
 				137C2EAE1B58783C00D9116A /* DeviceManager.swift in Sources */,
 				137C2EAC1B58781100D9116A /* AccountManager.swift in Sources */,
@@ -338,7 +346,10 @@
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = "$(HOME)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = "/Applications/Xcode-beta.app/Contents/SharedFrameworks  ";
+				FRAMEWORK_SEARCH_PATHS = (
+					"/Applications/Xcode-beta.app/Contents/SharedFrameworks",
+					"/Applications/Xcode-beta.app/Contents/Frameworks",
+				);
 				INFOPLIST_FILE = SparklingHelper/Info.plist;
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				LD_RUNPATH_SEARCH_PATHS = "$(DT_TOOLCHAIN_DIR)/usr/lib/swift/macosx";
@@ -359,7 +370,10 @@
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = "$(HOME)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = "/Applications/Xcode-beta.app/Contents/SharedFrameworks  ";
+				FRAMEWORK_SEARCH_PATHS = (
+					"/Applications/Xcode-beta.app/Contents/SharedFrameworks",
+					"/Applications/Xcode-beta.app/Contents/Frameworks",
+				);
 				INFOPLIST_FILE = SparklingHelper/Info.plist;
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				LD_RUNPATH_SEARCH_PATHS = "$(DT_TOOLCHAIN_DIR)/usr/lib/swift/macosx";
