@@ -13,6 +13,7 @@ class SparklingHTTPServer {
     private let webServer = GCDWebServer()
     private lazy var deviceManager = DeviceManager()
     private lazy var accountManager = AccountManager()
+    private lazy var certificateManager = CertificateManager()
 
     func run() {
         webServer.addDefaultHandlerForMethod("GET", requestClass: GCDWebServerRequest.self, processBlock: {request in
@@ -27,14 +28,23 @@ class SparklingHTTPServer {
                     [ "username" : $0.username ]
                 }
                 return GCDWebServerDataResponse(JSONObject: accounts)
+            case "/certificates":
+                let certificates = self.certificateManager.certificates().map {
+                    [
+                        "commonName" : $0.commonName,
+                        "portalTeamID" : $0.portalTeamID,
+                        "portalMemberID" : $0.portalMemberID,
+                        "trimmedName" : $0.trimmedName
+                    ]
+                }
+                NSLog("%@", certificates)
+                return GCDWebServerDataResponse(JSONObject: certificates)
             default:
-                let title = "SparklingHelper"
-                let html = "<h1>⚡️SparklingHelper</h1>" +
-                "<ul>" +
-                    "<li><a href=\"/devices\">/devices</a></li>" +
-                    "<li><a href=\"/accounts\">/accounts</a></li>" +
-                "</ul>"
-                return GCDWebServerDataResponse(HTML: "<html><head><title>⚡️\(title)</title></head><body>\(html)</body></html")
+                let title = "⚡️SparklingHelper"
+                let html = ["accounts", "devices", "certificates"].reduce("<h1>\(title)</h1><ul>") {
+                    $0 + "<li><a href='\($1)'>\($1)</a></li>"
+                } + "</ul>"
+                return GCDWebServerDataResponse(HTML: "<html><head><title>\(title)</title></head><body>\(html)</body></html")
             }
         })
 
