@@ -12,5 +12,6 @@
 #import <GCDWebServer.h>
 #import <GCDWebServerDataResponse.h>
 #import "DVTFoundation.h"
+#import "IDEKit.h"
 
 #endif /* BridgeHeader_h */
