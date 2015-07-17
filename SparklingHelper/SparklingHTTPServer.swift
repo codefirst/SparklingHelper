@@ -37,7 +37,6 @@ class SparklingHTTPServer {
                         "trimmedName" : $0.trimmedName
                     ]
                 }
-                NSLog("%@", certificates)
                 return GCDWebServerDataResponse(JSONObject: certificates)
             default:
                 let title = "⚡️SparklingHelper"
