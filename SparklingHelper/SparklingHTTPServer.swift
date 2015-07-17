@@ -36,6 +36,11 @@ class SparklingHTTPServer {
                     ]
                 }
                 return GCDWebServerDataResponse(JSONObject: certificates)
+            case "/request_provisioning":
+                // FIXME: check method type
+                let req = RequestProvisioningHandler(xcode: self.xcode, query: request.query as! [String:String])
+                let json = req.call()
+                return GCDWebServerDataResponse(JSONObject: json)
             default:
                 let title = "⚡️SparklingHelper"
                 let html = ["accounts", "devices", "certificates"].reduce("<h1>\(title)</h1><ul>") {

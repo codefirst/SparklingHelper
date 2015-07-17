@@ -15,6 +15,7 @@
 		138918FF1B59AEE3001A721E /* CertificateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138918FE1B59AEE3001A721E /* CertificateManager.swift */; };
 		138919011B59B589001A721E /* RequestProvisioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138919001B59B589001A721E /* RequestProvisioning.swift */; };
 		138919031B59B7E2001A721E /* IDEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138919021B59B7E2001A721E /* IDEKit.framework */; };
+		138919061B59C25D001A721E /* RequestProvisioningHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138919051B59C25D001A721E /* RequestProvisioningHandler.swift */; };
 		138919081B59C2AA001A721E /* XcodeGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138919071B59C2AA001A721E /* XcodeGateway.swift */; };
 		13E537501B55C09C00EB27B5 /* SparklingHelper.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 13E5374F1B55C09C00EB27B5 /* SparklingHelper.xcscheme */; };
 		13E537521B55C09C00EB27B5 /* SparklingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E537511B55C09C00EB27B5 /* SparklingHelper.swift */; };
@@ -32,6 +33,7 @@
 		138918FE1B59AEE3001A721E /* CertificateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificateManager.swift; sourceTree = "<group>"; };
 		138919001B59B589001A721E /* RequestProvisioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProvisioning.swift; sourceTree = "<group>"; };
 		138919021B59B7E2001A721E /* IDEKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IDEKit.framework; path = "../../../../Applications/Xcode-beta.app/Contents/Frameworks/IDEKit.framework"; sourceTree = "<group>"; };
+		138919051B59C25D001A721E /* RequestProvisioningHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProvisioningHandler.swift; sourceTree = "<group>"; };
 		138919071B59C2AA001A721E /* XcodeGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XcodeGateway.swift; sourceTree = "<group>"; };
 		13E5374B1B55C09C00EB27B5 /* SparklingHelper.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SparklingHelper.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		13E5374F1B55C09C00EB27B5 /* SparklingHelper.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = SparklingHelper.xcscheme; path = SparklingHelper.xcodeproj/xcshareddata/xcschemes/SparklingHelper.xcscheme; sourceTree = SOURCE_ROOT; };
@@ -60,6 +62,7 @@
 		133F51871B586DC20039B34C /* HTTPServer */ = {
 			isa = PBXGroup;
 			children = (
+				138919041B59C251001A721E /* Handler */,
 				138799D81B57EBD0005CB7FB /* SparklingHTTPServer.swift */,
 			);
 			name = HTTPServer;
@@ -85,6 +88,14 @@
 				138799DA1B57EBDF005CB7FB /* BridgeHeader.h */,
 			);
 			name = Headers;
+			sourceTree = "<group>";
+		};
+		138919041B59C251001A721E /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				138919051B59C25D001A721E /* RequestProvisioningHandler.swift */,
+			);
+			name = Handler;
 			sourceTree = "<group>";
 		};
 		13E537431B55C09C00EB27B5 = {
@@ -251,6 +262,7 @@
 			files = (
 				13E537521B55C09C00EB27B5 /* SparklingHelper.swift in Sources */,
 				138918FF1B59AEE3001A721E /* CertificateManager.swift in Sources */,
+				138919061B59C25D001A721E /* RequestProvisioningHandler.swift in Sources */,
 				138919081B59C2AA001A721E /* XcodeGateway.swift in Sources */,
 				138799D91B57EBD0005CB7FB /* SparklingHTTPServer.swift in Sources */,
 				138919011B59B589001A721E /* RequestProvisioning.swift in Sources */,
