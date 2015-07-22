@@ -1,3 +1,43 @@
+@interface DVTFuture : NSObject
+{
+}
+
++ (id)futureWithOperation:(id)arg1;
++ (id)cancelledFuture;
++ (id)futureWithResult:(id)arg1;
++ (id)futureWithError:(id)arg1;
++ (id)runOperation:(id)arg1;
++ (id)trackOperation:(id)arg1;
+- (void)trackFuture:(id)arg1;
+- (void)trackFuture:(id)arg1 progress:(float)arg2 cancel:(BOOL)arg3 result:(BOOL)arg4 error:(BOOL)arg5;
+- (void)updateProgressFromReporters;
+- (void)failWithError:(id)arg1 afterTimeout:(double)arg2;
+- (void)succeedWithResult:(id)arg1 afterTimeout:(double)arg2;
+- (void)cancelAfterTimeout:(double)arg1;
+- (void)_setState:(long long)arg1 result:(id)arg2 error:(id)arg3 afterTimeout:(double)arg4;
+- (void)succeedWithResult:(id)arg1;
+- (void)failWithError:(id)arg1;
+- (void)cancel;
+- (void)setState:(long long)arg1 result:(id)arg2 error:(id)arg3;
+- (id)future;
+- (void)setProgress:(long long)arg1;
+@property(readonly, copy) NSString *description;
+- (id)_description;
+- (void)observeFinishWithDispatchGroup:(id)arg1;
+@property(readonly, getter=isCancelled) BOOL cancelled;
+- (long long)waitUntilFinished;
+- (id)result;
+- (id)error;
+- (void)_signalFinished;
+- (void)_waitUntilFinished;
+- (void)dealloc;
+- (id)initWithResult:(id)arg1;
+- (id)initWithError:(id)arg1;
+- (id)init;
+
+@end
+
+
 @interface DVTPlatform : NSObject
 {
 }
