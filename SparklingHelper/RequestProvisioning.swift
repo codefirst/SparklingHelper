@@ -20,7 +20,6 @@ class RequestProvisioning {
     }
 
     func call(bundleIdentifier: String) {
-        // FIXME: Add some error handling, or wait for result.
         portalSource.requestDevelopmentProvisioningProfileForAccount(
             self.account,
             signingCertificate: self.certificate,
@@ -29,6 +28,7 @@ class RequestProvisioning {
             requiredCodesignableDevices: NSSet(object: self.snapshotDevice()),
             requiredFeatures: self.requiredFeatures,
             logAspect: logAspect)
+        .waitUntilFinished()
     }
 
     private func snapshotDevice() -> DVTCodesignableDeviceSnapshot{
