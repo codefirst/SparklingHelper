@@ -1,4 +1,4 @@
-# SparklingHelpr
+# SparklingHelper
 
 Xcode plugin that provides http gateway to access internal API.
 
