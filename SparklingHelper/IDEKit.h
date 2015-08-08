@@ -33,6 +33,23 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 @end*/
 
+@interface IDECodesignIssueResolverAppIDRequirements : NSObject
+{
+    NSString *_bundleIdentifier;
+    NSDictionary *_requiredEntitlements;
+    DVTAppIDFeatures *_requiredFeatures;
+}
+
++ (IDECodesignIssueResolverAppIDRequirements*)appIDRequirementsWithBundleIdentifier:(id)arg1 entitlements:(id)arg2 features:(id)arg3;
+@property(retain) DVTAppIDFeatures *requiredFeatures; // @synthesize requiredFeatures=_requiredFeatures;
+@property(retain) NSDictionary *requiredEntitlements; // @synthesize requiredEntitlements=_requiredEntitlements;
+@property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
+- (id)description;
+- (unsigned long long)hash;
+- (BOOL)isEqual:(id)arg1;
+@end
+
+
 @interface IDECodesignIssueResolutionPortalSource : NSObject
 {
 }
@@ -41,7 +58,7 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 + (id)defaultPortalSource;
 - (id)requestDistributionProvisioningProfileForAccount:(id)arg1 signingCertificate:(id)arg2 platformIdentifier:(id)arg3 bundleIdentifiers:(id)arg4 includeDevices:(BOOL)arg5 logAspect:(id)arg6;
 - (id)_requestDistributionProvisioningProfileWithPortalPlatform:(id)arg1 subPlatform:(id)arg2 bundleIdentifier:(id)arg3 includeDevices:(BOOL)arg4 token:(id)arg5 logAspect:(id)arg6;
-- (DVTFuture*)requestDevelopmentProvisioningProfileForAccount:(id)arg1 signingCertificate:(id)arg2 platformIdentifier:(id)arg3 bundleIdentifiers:(id)arg4 requiredCodesignableDevices:(id)arg5 requiredFeatures:(id)arg6 logAspect:(id)arg7;
+- (DVTFuture*)requestDevelopmentProvisioningProfileForAccount:(id)arg1 signingCertificate:(id)arg2 platformIdentifier:(id)arg3 appIDRequirements:(id)arg4 requiredCodesignableDevices:(id)arg5 logAspect:(id)arg6;
 - (id)_requestDevelopmentProvisioningProfileWithPortalPlatform:(id)arg1 subPlatform:(id)arg2 bundleIdentifier:(id)arg3 requiredFeatures:(id)arg4 token:(id)arg5 logAspect:(id)arg6;
 - (id)_registerCodeSignableDevice:(id)arg1 withPortalPlatform:(id)arg2 token:(id)arg3 logAspect:(id)arg4;
 - (id)_requestProvisioningProfileWithPortalPlatform:(id)arg1 bundleIdentifier:(id)arg2 token:(id)arg3 profileOp:(id)arg4 logAspect:(id)arg5;

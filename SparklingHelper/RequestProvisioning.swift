@@ -24,14 +24,25 @@ class RequestProvisioning {
             self.account,
             signingCertificate: self.certificate,
             platformIdentifier: self.platformIdentifier,
-            bundleIdentifiers: NSSet(object: bundleIdentifier),
+            appIDRequirements: NSSet(object: appIDRequirement(bundleIdentifier)),
             requiredCodesignableDevices: NSSet(object: self.snapshotDevice()),
-            requiredFeatures: self.requiredFeatures,
             logAspect: logAspect)
         .waitUntilFinished()
     }
 
     private func snapshotDevice() -> DVTCodesignableDeviceSnapshot{
         return DVTCodesignableDeviceSnapshot.snapshotFromCodesignableDevice(self.device) as! DVTCodesignableDeviceSnapshot
+    }
+
+    private func appIDRequirement(bundleIdentifier : String) -> IDECodesignIssueResolverAppIDRequirements {
+        return IDECodesignIssueResolverAppIDRequirements(
+            bundleIdentifier: bundleIdentifier,
+            entitlements: [
+                "application-identifier":
+                    "$(AppIdentifierPrefix)\(bundleIdentifier)",
+                "keychain-access-groups" :
+                    ["$(AppIdentifierPrefix)\(bundleIdentifier)"]
+            ],
+            features: requiredFeatures)
     }
 }
