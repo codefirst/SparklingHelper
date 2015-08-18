@@ -25,13 +25,15 @@ class RequestProvisioning {
             signingCertificate: self.certificate,
             platformIdentifier: self.platformIdentifier,
             appIDRequirements: NSSet(object: appIDRequirement(bundleIdentifier)),
-            requiredCodesignableDevices: NSSet(object: self.snapshotDevice()),
+            requiredCodesignableDevices: self.snapshotDevices(),
             logAspect: logAspect)
         .waitUntilFinished()
     }
 
-    private func snapshotDevice() -> DVTCodesignableDeviceSnapshot{
-        return DVTCodesignableDeviceSnapshot.snapshotFromCodesignableDevice(self.device) as! DVTCodesignableDeviceSnapshot
+    private func snapshotDevices() -> NSSet {
+        var devices = device.proxiedDevices.map { snapshot($0 as! DVTDevice) }
+        devices.append(snapshot(self.device))
+        return NSSet(array: devices)
     }
 
     private func appIDRequirement(bundleIdentifier : String) -> IDECodesignIssueResolverAppIDRequirements {
@@ -44,5 +46,9 @@ class RequestProvisioning {
                     ["$(AppIdentifierPrefix)\(bundleIdentifier)"]
             ],
             features: requiredFeatures)
+    }
+
+    private func snapshot(device : DVTDevice) ->  DVTCodesignableDeviceSnapshot {
+        return DVTCodesignableDeviceSnapshot.snapshotFromCodesignableDevice(device) as! DVTCodesignableDeviceSnapshot
     }
 }
