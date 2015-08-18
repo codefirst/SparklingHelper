@@ -18,7 +18,7 @@ class SparklingHTTPServer {
             switch request.path {
             case "/devices":
                 let devices = self.xcode.deviceManager.allDevices().map {
-                    [ "name": $0.name, "identifier": $0.identifier, "platform": $0.platform.name ]
+                    [ "name": $0.name, "identifier": $0.identifier, "platform": $0.platform.name, "class" : $0.className ]
                 }
                 return GCDWebServerDataResponse(JSONObject: devices)
             case "/accounts":
