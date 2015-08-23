@@ -31,9 +31,9 @@ class RequestProvisioning {
     }
 
     private func snapshotDevices() -> NSSet {
-        var devices = device.proxiedDevices.map { snapshot($0 as! DVTDevice) }
-        devices.append(snapshot(self.device))
-        return NSSet(array: devices)
+        var devices = device.proxiedDevices?.map { snapshot($0) }
+        devices?.append(snapshot(self.device))
+        return NSSet(array: devices ?? [])
     }
 
     private func appIDRequirement(bundleIdentifier : String) -> IDECodesignIssueResolverAppIDRequirements {
@@ -48,7 +48,7 @@ class RequestProvisioning {
             features: requiredFeatures)
     }
 
-    private func snapshot(device : DVTDevice) ->  DVTCodesignableDeviceSnapshot {
+    private func snapshot(device : AnyObject) ->  DVTCodesignableDeviceSnapshot {
         return DVTCodesignableDeviceSnapshot.snapshotFromCodesignableDevice(device) as! DVTCodesignableDeviceSnapshot
     }
 }
