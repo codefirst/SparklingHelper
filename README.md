@@ -9,7 +9,7 @@ Xcode plugin that provides http gateway to access internal API.
 
 ## Requirements
 
- * Xcode 7.0 beta 5 (7A176x)
+ * Version 7.0 GM seed (7A218)
 
 ## Usage
 
